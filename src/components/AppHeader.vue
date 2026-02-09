@@ -2,7 +2,7 @@
     <div class="app-header">
         <h1 class="main-title">What do we watch tonight ?</h1>
         <h3 class="second-title">Powered by TMDB and AI</h3>
-        <a class="repo-link" href="https://www.google.com/" target="blank">
+        <a class="repo-link" href="https://github.com/mohdje/AIDecideTonight" target="blank">
             <img src="/src/assets/github.svg" />
         </a>
     </div>
