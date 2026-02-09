@@ -1,6 +1,6 @@
 <template>
   <div class="app-container">
-    <BackgroundAnimation />
+    <!-- <BackgroundAnimation /> -->
     <AppHeader />
     <div class="app-content">
       <transition name="fade" mode="out-in">

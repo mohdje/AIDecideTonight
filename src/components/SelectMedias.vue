@@ -6,27 +6,29 @@
                 <template v-if="selectedMedias[i - 1]">
                     <img :src="selectedMedias[i - 1].coverImageUrl">
                     <CustomButton theme="secondary" @on-button-click="onRemoveMediaClick(selectedMedias[i - 1])"
-                        smallRounded imgSrc="/src/assets/trash.svg" class="delete-btn" />
+                        smallRounded :imgSrc="trashIcon" class="delete-btn" />
                 </template>
                 <template v-else>
                     <img src="/src/assets/placeholder.png" />
-                    <CustomButton theme="secondary" @on-button-click="showMediaSearchModal" rounded
-                        imgSrc="/src/assets/plus.svg" class="add-btn" />
+                    <CustomButton theme="secondary" @on-button-click="showMediaSearchModal" rounded :imgSrc="plusIcon"
+                        class="add-btn" />
                 </template>
             </div>
         </div>
         <CustomButton theme="secondary" :disabled="selectedMedias.length < 3"
             @on-button-click="() => emits('get-ai-recommandations')" text="AI Recommandations" />
         <button class="back-btn" @click="() => emits('back')">Back</button>
-
     </div>
 </template>
 <script setup>
 import { computed, defineEmits } from "vue";
 import { selectedMediaType, selectedMedias } from '@/utils/store';
 import { showMediaPickerModal } from "@/services/modalsService";
-
 import CustomButton from '@/components/CustomButton.vue';
+
+import plusIcon from '@/assets/plus.svg';
+import trashIcon from '@/assets/trash.svg';
+
 const title = computed(() => `To have recommendations fitting your taste, pick three ${selectedMediaType.value.labelPluralLowerCase} you like :`);
 
 const emits = defineEmits([

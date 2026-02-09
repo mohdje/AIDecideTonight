@@ -1,13 +1,14 @@
 <template>
     <div class="modal-container" :class="{ 'visible': isVisible }">
         <CustomButton v-if="enableCloseButton" theme="transparent" smallRounded class="close-btn" @click="closeModal()"
-            imgSrc="/src/assets/close.svg" />
+            :imgSrc="closeImg" />
         <slot></slot>
     </div>
 </template>
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from "vue";
 import { ModalCloseRequestedEventName, closeModal } from "@/services/modalsService";
+import closeImg from '@/assets/close.svg';
 import CustomButton from "@/components/CustomButton.vue";
 
 const props = defineProps({

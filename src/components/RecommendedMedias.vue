@@ -23,11 +23,10 @@
                     </a>
                 </div>
                 <CustomButton class="nav-medias-btn" v-if="selectedMediaIndex === index" v-show="selectedMediaIndex > 0"
-                    @click="selectedMediaIndex--" smallRounded theme="transparent"
-                    imgSrc="/src/assets/arrow-left.svg" />
+                    @click="selectedMediaIndex--" smallRounded theme="transparent" :imgSrc="arrowLeftIcon" />
                 <CustomButton class="nav-medias-btn" v-if="selectedMediaIndex === index"
                     v-show="selectedMediaIndex < recommendedMedias.length - 1" @click="selectedMediaIndex++"
-                    smallRounded theme="transparent" imgSrc="/src/assets/arrow-right.svg" />
+                    smallRounded theme="transparent" :imgSrc="arrowRightIcon" />
             </div>
         </div>
     </div>
@@ -36,6 +35,8 @@
 import { ref, computed } from "vue";
 import CustomButton from "@/components/CustomButton.vue";
 import { selectedMediaType } from "@/utils/store";
+import arrowLeftIcon from '@/assets/arrow-left.svg';
+import arrowRightIcon from '@/assets/arrow-right.svg';
 
 const props = defineProps({
     recommendedMedias: Array
