@@ -7,8 +7,8 @@ export const mediaTypes = [
         labelPluralLowerCase: "movies",
         labelLowerCase: "movie",
         tmdbCategory: "movie",
-        icon: "/src/assets/movie.svg",
-        mosaic: "/src/assets/mosaic-movies.svg",
+        icon: new URL('../assets/movie.svg', import.meta.url).href,
+        mosaic: new URL('../assets/mosaic-movies.svg', import.meta.url).href,
     },
     {
         id: 1,
@@ -16,8 +16,8 @@ export const mediaTypes = [
         labelPluralLowerCase: "series",
         labelLowerCase: "serie",
         tmdbCategory: "tv",
-        icon: "/src/assets/tv.svg",
-        mosaic: "/src/assets/mosaic-series.svg",
+        icon: new URL('../assets/tv.svg', import.meta.url).href,
+        mosaic: new URL('../assets/mosaic-series.svg', import.meta.url).href,
     }
 ]
 
