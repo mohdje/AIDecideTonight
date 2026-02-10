@@ -7,8 +7,11 @@ export async function searchMedia(mediaType, title) {
 
     try {
         const response = await fetch(url);
-        if (response.ok)
-            return await response.json();
+        if (response.ok) {
+            const result = await response.json();
+            return result.medias ?? [];
+        }
+
         else
             return [];
     } catch (error) {
