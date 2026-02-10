@@ -1,4 +1,4 @@
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 
 export const mediaTypes = [
     {
@@ -24,4 +24,8 @@ export const mediaTypes = [
 export const selectedMedias = ref([]);
 
 export const selectedMediaType = ref(null);
+
+watch(selectedMediaType, () => {
+    selectedMedias.value = [];
+});
 
