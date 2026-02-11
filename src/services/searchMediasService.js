@@ -39,8 +39,10 @@ export async function getRecommendedMedias(mediaType, selectedMedias) {
             showToastMessage("You reached the maximum requests for recommendation. Please try again later.");
             return [];
         }
-        if (response.ok)
-            return await response.json();
+        if (response.ok) {
+            const result = await response.json();
+            return result.recommendations ?? [];
+        }
         else
             return [];
     } catch (error) {
